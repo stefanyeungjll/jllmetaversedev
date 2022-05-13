@@ -14,15 +14,16 @@ const Welcometext = styled.button`
   position: relative;
   margin-top: 100px;
   font-family: Arial;
-  background-color: #fc2803;
+  background-color: #FFFFFF;
   align-content: center;
   text-align: center;
   max-width: fit-content;
-  height: 100px;
+  height: 50px;
 `;
 
 const AppWrapper = styled.div`
   height: 100%;
+  overflow: hidden;
 `;
 // <ReactiveQR onCode={(code) => console.log(code)} /> //
 export default function App() {
