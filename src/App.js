@@ -3,11 +3,10 @@ import styled from "styled-components";
 import Camera from "./Components/Display";
 import React, { useState } from "react";
 import background from "../src/Images/banner1.png";
-
+import SearchAppBar from "./Components/Navbar";
 const JLLLogo = styled.div`
   position: absolute;
   left: 0;
-  top: 0;
   padding: 5px;
 `;
 const Welcometext = styled.button`
@@ -22,7 +21,7 @@ const Welcometext = styled.button`
 `;
 
 const AppWrapper = styled.div`
-  height: 100%;
+  max-width: 1264px;
   overflow: hidden;
 `;
 // <ReactiveQR onCode={(code) => console.log(code)} /> //
@@ -31,6 +30,7 @@ export default function App() {
   console.log(iscameraOpen);
   return (
     <AppWrapper className="App" style={{backgroundImage: `url(${background})`, height: '1000px'}}>
+      <SearchAppBar></SearchAppBar>
       <JLLLogo>
         <a href="https://www.jll.com.hk">
           <img
