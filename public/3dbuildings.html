@@ -128,7 +128,7 @@
 
 
     </script>
-  <body style='margin : 0px; overflow: hidden;'>
+  <body style="margin : 15px; overflow: hidden; width: 90%; height: 90%;">
     <!-- <div id="container" style="position:absolute; top:0; left:0; height:100%; width:100%"> -->
       <a-scene embedded arjs cursor="fuse: false; rayOrigin: mouse;" renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true">
         <a-marker listener id='marker' emitevents="true" rayOrigin="objects: .clickable" type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-JLL(1).patt" size="0.042" smooth='true'>
@@ -182,8 +182,7 @@
           <a-box id='target' position="3.22 1 0.22" material='opacity: 1;'></a-box> -->
 
         </a-marker>
-        <a-entity id="camera" camera look-controls
-        zoom="0.5"></a-entity>
+        <a-entity camera></a-entity>
       </a-scene>
     <!-- </div> -->
     <!-- <div class="left_container" style="position:absolute; top:0; left:0;"> -->
