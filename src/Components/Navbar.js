@@ -7,9 +7,12 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import styled from "styled-components";
 
-const Navbartext = styled.div`
+const Navbartext = styled(Typography)`
     margin-left: 10px;
 `
+const handleClose = () => {
+    console.log('hello clicked')
+};
 export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -21,16 +24,11 @@ export default function ButtonAppBar() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick= {handleClose}
           >
             <MenuIcon />
           </IconButton>
-            <Navbartext>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                JLL Metaverse
-                </Typography>
-            </Navbartext>
-          
-          {/* <Button color="inherit">Login</Button> */}
+          <Navbartext>JLL Metaverse</Navbartext>
         </Toolbar>
       </AppBar>
     </Box>
