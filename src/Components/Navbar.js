@@ -19,9 +19,7 @@ const JLLLogo = styled.div`
 const handleClose = () => {
     console.log('hello clicked')
 };
-const NavbarWarpper = styled.div`
-    color: #FFFFFF
-`;
+
 export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1 , backgroundColor: 'primary.light',}}>
