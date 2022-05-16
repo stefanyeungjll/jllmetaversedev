@@ -10,6 +10,7 @@ const BodyWrapper = styled.div`
 const LinkWrapper = styled.a`
   color: #FFFFFF;
 `;
+
 function Camera() {
   return (
     <BodyWrapper>
