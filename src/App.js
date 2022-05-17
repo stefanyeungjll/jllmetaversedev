@@ -4,11 +4,7 @@ import Camera from "./Components/Display";
 import React, { useState } from "react";
 import background from "../src/Images/banner1.png";
 import SearchAppBar from "./Components/Navbar";
-const JLLLogo = styled.div`
-  position: absolute;
-  left: 0;
-  padding: 5px;
-`;
+
 const Welcometext = styled.button`
   position: relative;
   margin-top: 100px;
@@ -18,10 +14,12 @@ const Welcometext = styled.button`
   text-align: center;
   max-width: fit-content;
   height: 50px;
+  border-radius: 8px;
 `;
 
 const AppWrapper = styled.div`
-  max-width: 1264px;
+  position: relative;
+  // max-width: 1264px;
   overflow: hidden;
 `;
 // <ReactiveQR onCode={(code) => console.log(code)} /> //
@@ -29,19 +27,9 @@ export default function App() {
   const [iscameraOpen, setIscameraOpen] = useState(false);
   console.log(iscameraOpen);
   return (
-    <AppWrapper className="App" style={{backgroundImage: `url(${background})`, height: '1000px'}}>
+    <AppWrapper className="App" style={{backgroundImage: `url(${background})`, height: 1214}}>
       <SearchAppBar></SearchAppBar>
-      <JLLLogo>
-        <a href="https://www.jll.com.hk">
-          <img
-            src="https://www.jll.com.hk/content/dam/jll-com/images/logos/jll-logo-positive.svg"
-            alt="JLL Hong Kong"
-            loading="lazy"
-            width="100"
-            height="43"
-          ></img>
-        </a>
-      </JLLLogo>
+      
       <Welcometext onClick={() => setIscameraOpen((prev) => !prev)}>
         2030+ Conceptual Development
       </Welcometext>
