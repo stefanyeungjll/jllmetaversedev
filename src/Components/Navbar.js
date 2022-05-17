@@ -3,8 +3,9 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import styled from "styled-components";
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import BasicMenu from './basicmenu';
 const IconbuttonWrapper = styled.div`
     position: absolute;
     right: 1px;
@@ -16,11 +17,14 @@ const JLLLogo = styled.div`
   left: 0;
 `;
 
-const handleClose = () => {
-    console.log('hello clicked')
-};
+
 
 export default function ButtonAppBar() {
+    const [anchorEl, setAnchorEl] = React.useState(false);
+    const open = Boolean(anchorEl);
+    const handleClose = () => {
+        setAnchorEl((prev) => !prev)
+    };
   return (
     <Box sx={{ flexGrow: 1 , backgroundColor: 'primary.light',}}>
       <AppBar position="static" color="inherit">
@@ -37,17 +41,20 @@ export default function ButtonAppBar() {
                 </a>
             </JLLLogo>
             <IconbuttonWrapper>
-                <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="menu"
-                    sx={{ mr: 2 }}
-                    onClick= {handleClose}
-                >
-                    <MenuIcon />
-                </IconButton>
+                <BasicMenu></BasicMenu>
             </IconbuttonWrapper>
+            <Menu
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                    }}
+                >
+                    <MenuItem onClick={handleClose}>Home Page</MenuItem>
+                    <MenuItem onClick={handleClose}>AR view</MenuItem>
+            </Menu>
         </Toolbar>
       </AppBar>
     </Box>

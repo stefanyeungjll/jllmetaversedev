@@ -1,39 +1,44 @@
 import './App.css';
 import styled from "styled-components";
-import Camera from "./Components/Display";
-import React, { useState } from "react";
+import React from "react";
 import background from "../src/Images/banner1.png";
-import SearchAppBar from "./Components/Navbar";
+import hongkong1 from "../src/Images/hongkong1.jpg";
+import hongkong2 from "../src/Images/hongkong2.jfif";
+import hongkong3 from "../src/Images/hongkong3.jfif";
+import BackgroundSlider from 'react-background-slider'
 
-const Welcometext = styled.button`
-  position: relative;
-  margin-top: 100px;
-  font-family: Arial;
-  background-color: #FFFFFF;
-  align-content: center;
-  text-align: center;
-  max-width: fit-content;
-  height: 50px;
-  border-radius: 8px;
-`;
+import HomeLanding from "./Page/HomePage";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+
+
 
 const AppWrapper = styled.div`
   position: relative;
   // max-width: 1264px;
   overflow: hidden;
 `;
+
 // <ReactiveQR onCode={(code) => console.log(code)} /> //
 export default function App() {
-  const [iscameraOpen, setIscameraOpen] = useState(false);
-  console.log(iscameraOpen);
-  return (
-    <AppWrapper className="App" style={{backgroundImage: `url(${background})`, height: 1214}}>
-      <SearchAppBar></SearchAppBar>
-      
-      <Welcometext onClick={() => setIscameraOpen((prev) => !prev)}>
-        2030+ Conceptual Development
-      </Welcometext>
-      {iscameraOpen && <Camera></Camera>}
+  return(
+    
+    <AppWrapper className="App" style={{height: 1214}}>
+      <BackgroundSlider 
+        images={[background, hongkong1, hongkong2, hongkong3]}
+        duration={10}
+        transition={2}
+      >
+      </BackgroundSlider>
+      <Router>
+          <Routes>
+                  <Route exact path='/' element={< HomeLanding />}></Route>
+          </Routes>
+      </Router>
     </AppWrapper>
-  );
+  )
 }
