@@ -22,15 +22,17 @@ import {
 
 const AppWrapper = styled.div`
   position: relative;
-  // max-width: 1264px;
+  max-width: 1264px;
   overflow: hidden;
+  height: 100vh;
+  margin: auto;
 `;
 
 // <ReactiveQR onCode={(code) => console.log(code)} /> //
 export default function App() {
   return(
     
-    <AppWrapper className="App" style={{height: 756}}>
+    <AppWrapper className="App">
       <BackgroundSlider 
         images={[First, Second, Third, Fourth]}
         duration={10}
