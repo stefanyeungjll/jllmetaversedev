@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
+import "../App.css";
 const MenuWrapper = styled(Menu)`
     position: absolute;
     right: 1px;
@@ -46,10 +46,10 @@ export default function BasicMenu() {
           }}
         >
           <MenuItem onClick={handleClose}>
-            <Link to= "/"> Home Page </Link>
+            <Link className="plain" to= "/"> Home Page </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <a href="3dbuildings.html"> AR View </a>
+            <a className="plain" href="3dbuildings.html"> AR View </a>
           </MenuItem>
         </MenuWrapper>
     </div>

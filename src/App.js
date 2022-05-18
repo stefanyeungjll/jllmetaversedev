@@ -1,10 +1,13 @@
 import './App.css';
 import styled from "styled-components";
 import React from "react";
-import background from "../src/Images/banner1.png";
-import hongkong1 from "../src/Images/hongkong1.jpg";
-import hongkong2 from "../src/Images/hongkong2.jfif";
-import hongkong3 from "../src/Images/hongkong3.jfif";
+import {
+  First,
+  Second,
+  Third,
+  Fourth
+} from '../src/assets/Images';
+
 import BackgroundSlider from 'react-background-slider'
 
 import HomeLanding from "./Page/HomePage";
@@ -19,17 +22,19 @@ import {
 
 const AppWrapper = styled.div`
   position: relative;
-  // max-width: 1264px;
+  max-width: 1264px;
   overflow: hidden;
+  height: 100vh;
+  margin: auto;
 `;
 
 // <ReactiveQR onCode={(code) => console.log(code)} /> //
 export default function App() {
   return(
     
-    <AppWrapper className="App" style={{height: 1214}}>
+    <AppWrapper className="App">
       <BackgroundSlider 
-        images={[background, hongkong1, hongkong2, hongkong3]}
+        images={[First, Second, Third, Fourth]}
         duration={10}
         transition={2}
       >
