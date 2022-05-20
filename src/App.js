@@ -1,16 +1,10 @@
 import './App.css';
 import styled from "styled-components";
 import React from "react";
-import {
-  First,
-  Second,
-  Third,
-  Fourth
-} from '../src/assets/Images';
-
-import BackgroundSlider from 'react-background-slider'
+import EsriMap from "./Page/MapPage";
 
 import HomeLanding from "./Page/HomePage";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -33,15 +27,11 @@ export default function App() {
   return(
     
     <AppWrapper className="App">
-      <BackgroundSlider 
-        images={[First, Second, Third, Fourth]}
-        duration={10}
-        transition={2}
-      >
-      </BackgroundSlider>
+
       <Router>
           <Routes>
                   <Route exact path='/' element={< HomeLanding />}></Route>
+                  <Route exact path='/map' element= {<EsriMap id="e691172598f04ea8881cd2a4adaa45ba" />}></Route>
           </Routes>
       </Router>
     </AppWrapper>

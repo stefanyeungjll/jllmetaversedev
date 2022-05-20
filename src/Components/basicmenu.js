@@ -51,6 +51,9 @@ export default function BasicMenu() {
           <MenuItem onClick={handleClose}>
             <a className="plain" href="3dbuildings.html"> AR View </a>
           </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link className="plain" to= "/map"> Map </Link>
+          </MenuItem>
         </MenuWrapper>
     </div>
   );
