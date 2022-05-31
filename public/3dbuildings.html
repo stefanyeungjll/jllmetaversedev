@@ -12,9 +12,10 @@
     <!-- import the webpage's javascript file -->
 
   </head>
-	<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<!-- 	import aframe and ar.js with image tracking features -->
+	<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+ 	<script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 	<script>
 
 		// AFRAME.registerComponent("clicklistener", {
@@ -128,26 +129,56 @@
 
 
     </script>
+	
+	<style>
+	  .arjs-loader {
+	    height: 100%;
+	    width: 100%;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    background-color: rgba(0, 0, 0, 0.8);
+	    z-index: 9999;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	  }
+
+	  .arjs-loader div {
+	    text-align: center;
+	    font-size: 1.25em;
+	    color: white;
+	  }
+	</style>
   <body style="margin : 15px; overflow: hidden; width: 90%; height: 90%;">
-    <!-- <div id="container" style="position:absolute; top:0; left:0; height:100%; width:100%"> -->
-      <a-scene embedded arjs cursor="fuse: false; rayOrigin: mouse;" renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true">
-        <a-marker listener id='marker' emitevents="true" rayOrigin="objects: .clickable" type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-JLL(1).patt" size="0.042" smooth='true'>
-          <a-box material='opacity: 0.2;'></a-box>
-<!--           <a-text value="TEST" position="0 0 0" width="2" color="black" align="center" look-at="[camera]"></a-text> -->
+  <!-- minimal loader shown until image descriptors are loaded. -->
+	  <div class="arjs-loader">
+	    <div>Loading, please wait...</div>
+	  </div>
+      <a-scene 
+	    vr-mode-ui="enabled: false;"
+	    renderer="logarithmicDepthBuffer: true;"
+	    embedded
+	    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+	  >
+	      
+	<a-nft
+	      type="nft"
+	      url="https://venuschanhk.github.io/jllmapar.github.io/image/MicrosoftTeams-image_2"
+	      smooth="true"
+	      smoothCount="10"
+	      smoothTolerance=".01"
+	      smoothThreshold="5"
+	    >
           <a-text value="NORTHERN METROPOLIS" position="5.32312 0.091 -4.438602" rotation="0 0 -90" width="4" color="black" align="center" look-at="[camera]"></a-text>
           <a-text value="HARBOUR METROPOLIS" position="5.57865 0.091 -1.82784" rotation="0 0 -90" width="4" color="black" align="center" look-at="[camera]"></a-text>
           <a-text value="EASTERN\nKNOWLEDGE and TECHNOLOGY\nCORRIDOR" position="6.129606 0.011 -3.336102" rotation="0 0 -90" look-at="[camera]" width="4" color="black" align="center"></a-text>
           <a-text value="WESTERN\nECONOMIC\nCORRIDOR" position="2.85321 0.011 -2.878155" rotation="0 0 -90" width="4" color="black" align="center" look-at="[camera]"></a-text>
-          <!-- <a-entity
-            position="2.85321 1.3 -2.878155"
-            material="color: black"
-            text="value:WESTERN\nECONOMIC\nCorridor"
-          ></a-entity> -->
 
           <a-entity
             id='econ_belt_east'
             position="6.129606 0 -3.336102"
-            scale="0.021 0.05 0.021"
+            scale="0.021 0.01 0.021"
             material='opacity: 0.6;'
             text="value:WESTERN\nECONOMIC\nCorridor"
             gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/2030_EconomicBelt_Eastern_0.glb"
@@ -156,7 +187,7 @@
           <a-entity
             id='econ_belt_west'
             position="2.85321 0 -2.878155"
-            scale="0.021 0.05 0.021"
+            scale="0.021 0.01 0.021"
             material='opacity: 0.6;'
             gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/2030_EconomicBelt_Western_0.glb"
           ></a-entity>
@@ -164,7 +195,7 @@
           <a-entity
             id='dev_area_north'
             position="5.32312 0.01 -4.438602"
-            scale="0.021 0.07 0.021"
+            scale="0.021 0.02 0.021"
             material='opacity: 0.6;'
             gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/Development_Area_Northern_0.glb"
           ></a-entity>
@@ -172,20 +203,14 @@
           <a-entity
             id='dev_area_harbour'
             position="5.57865 0.01 -1.82784"
-            scale="0.021 0.07 0.021"
+            scale="0.021 0.02 0.021"
             material='opacity: 0.6;'
             gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/Development_Area_Harbour_0.glb"
           ></a-entity>
-
-
-          <!-- For testing
-          <a-box id='target' position="3.22 1 0.22" material='opacity: 1;'></a-box> -->
-
-        </a-marker>
+	</a-nft>
         <a-entity camera></a-entity>
       </a-scene>
-    <!-- </div> -->
-    <!-- <div class="left_container" style="position:absolute; top:0; left:0;"> -->
+
       <div id="nav_bar_logo" style="Padding:3px; width:20%; position:absolute; top:0; left:0;">
         <a href="https://www.jll.com.hk" class="logo-link">
           <img src="https://www.jll.com.hk/content/dam/jll-com/images/logos/jll-logo-positive.svg" alt="JLL Hong Kong" class="cq-dd-image logo" loading="lazy" width="100" height="43">
