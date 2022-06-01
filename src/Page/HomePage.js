@@ -49,10 +49,6 @@ const HoverButton = styled.button`
     background: Transparent no-repeat;
     color: #FFFFFF;
   }
-  &:focus {
-    background: Transparent no-repeat;
-    color: #FFFFFF;
-  }
 `;
 
 const Title = styled.p`
@@ -73,13 +69,10 @@ const Title = styled.p`
 const LinkWrapper = styled.a`
   text-decoration: none;
   font-weight: bold;
-  &:hover {
-    color: white;
-  }
-  &:focus {
-    color: white;
-  }
   color: black;
+  &:hover {
+    color: #FFFFFF;
+  }
 `;
 
 const PageWrapper = styled.div`
@@ -189,7 +182,7 @@ export default function HomeLanding(){
             </WhiteTextTypography>
             <ButtongroupWrapper>
               <HoverButton onClick={() => setIscameraOpen((prev) => !prev)}>
-                <LinkWrapper href="3dbuildings.html">The Map</LinkWrapper>
+                <LinkWrapper href="https://venuschanhk.github.io/jllmapar.github.io/polygon.html">The Map</LinkWrapper>
               </HoverButton>
               <HoverButton onClick={console.log('hello clicked second button')}>
                 <LinkWrapper href="https://www.jll.com.hk/">JLL Official Website</LinkWrapper>
