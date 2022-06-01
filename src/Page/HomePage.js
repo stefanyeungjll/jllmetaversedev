@@ -49,10 +49,6 @@ const HoverButton = styled.button`
     background: Transparent no-repeat;
     color: #FFFFFF;
   }
-  &:focus {
-    background: Transparent no-repeat;
-    color: #FFFFFF;
-  }
 `;
 
 const Title = styled.p`
@@ -73,6 +69,10 @@ const Title = styled.p`
 const LinkWrapper = styled.a`
   text-decoration: none;
   font-weight: bold;
+  color: black;
+  &:hover {
+    color: #FFFFFF;
+  }
 `;
 
 const PageWrapper = styled.div`
@@ -181,18 +181,32 @@ export default function HomeLanding(){
               {bodytext}
             </WhiteTextTypography>
             <ButtongroupWrapper>
-              <HoverButton onClick={() => setIscameraOpen((prev) => !prev)}>
-                <LinkWrapper href="3dbuildings.html">The Map</LinkWrapper>
-              </HoverButton>
-              <HoverButton onClick={console.log('hello clicked second button')}>
-                <LinkWrapper href="https://www.jll.com.hk/">JLL Official Website</LinkWrapper>
-              </HoverButton>
-              <HoverButton onClick={console.log('hello clicked second button')}>
-                <LinkWrapper href="https://www.jll.com.hk/">GIS Consultancy Service</LinkWrapper>
-              </HoverButton>
-              <HoverButton onClick={console.log('hello clicked second button')}>
-                <LinkWrapper href="https://www.jll.com.hk/">Dashboard</LinkWrapper>
-              </HoverButton>
+              
+              <LinkWrapper href="https://venuschanhk.github.io/jllmapar.github.io/polygon.html">
+                <HoverButton onClick={() => setIscameraOpen((prev) => !prev)} title="The Map">The Map
+                </HoverButton>
+              </LinkWrapper>
+              
+              
+              <LinkWrapper href="https://www.jll.com.hk/">
+                <HoverButton onClick={console.log('hello clicked second button')}>
+                  JLL Official Website
+                </HoverButton>
+              </LinkWrapper>
+
+
+             
+              <LinkWrapper href="https://www.jll.com.hk/">
+                <HoverButton onClick={console.log('hello clicked second button')}>
+                  GIS Consultancy Service
+                </HoverButton> 
+              </LinkWrapper>
+
+              <LinkWrapper href="https://www.jll.com.hk/">
+                <HoverButton onClick={console.log('hello clicked second button')}>
+                  Dashboard 
+                </HoverButton>
+              </LinkWrapper>
               {/* {iscameraOpen && <Camera></Camera>} */}
               <Icongroupwrapper>
                 <a href="http://weixin.qq.com/r/RxKWjgPE7F6TrUft90dV">
