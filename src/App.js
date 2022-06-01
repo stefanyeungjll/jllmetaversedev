@@ -4,6 +4,10 @@ import React from "react";
 import EsriMap from "./Page/MapPage";
 
 import HomeLanding from "./Page/HomePage";
+import {
+  First,
+} from './assets/Images';
+
 
 import {
   BrowserRouter as Router,
@@ -20,6 +24,10 @@ const AppWrapper = styled.div`
   overflow: hidden;
   height: 100vh;
   margin: auto;
+  background:url(${First}); 
+  background-position: center;
+  background-size: cover;
+  opacity: 1;
 `;
 
 // <ReactiveQR onCode={(code) => console.log(code)} /> //
@@ -27,7 +35,6 @@ export default function App() {
   return(
     
     <AppWrapper className="App">
-
       <Router>
           <Routes>
                   <Route exact path='/' element={< HomeLanding />}></Route>

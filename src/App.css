@@ -41,8 +41,12 @@
   text-decoration: none;
 }
 
-a:visited {
-  color: rgb(247, 10, 10);
+a:hover {
+  color: rgb(248, 248, 248);
+}
+
+a:link:visited {
+  text-decoration: black;
 }
 
 a:link {
