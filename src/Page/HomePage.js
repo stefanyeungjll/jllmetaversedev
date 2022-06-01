@@ -72,6 +72,7 @@ const Title = styled.p`
 `;
 const LinkWrapper = styled.a`
   text-decoration: none;
+  font-weight: bold;
 `;
 
 const PageWrapper = styled.div`
@@ -91,6 +92,11 @@ const BodyWrapper = styled.div`
   overflow: hidden;
   height: 100vh;
   margin: auto;
+  @media screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 768px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+  }
 `;
 
 const JLLLogo = styled.img`
@@ -137,11 +143,30 @@ const Icongroupwrapper = styled.div`
   margin-top: 5px;
   margin-right: 4px;
   right: 0;
+  @media screen 
+  and (min-device-width: 376px) 
+  and (max-device-width: 413px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    margin-right: 11px;
+  }
+  @media screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 500px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    margin-right: 20px;
+  }
 `;
 
 const ButtongroupWrapper = styled.div`
   position: relative;
   height: 500px;
+  width: 100%;
+  and (min-device-width: 375px) 
+  and (max-device-width: 768px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    width: 337.5px;
+    height: 800px;
+  }
 `;
 export default function HomeLanding(){
     const [iscameraOpen, setIscameraOpen] = useState(false);
@@ -170,7 +195,7 @@ export default function HomeLanding(){
               </HoverButton>
               {/* {iscameraOpen && <Camera></Camera>} */}
               <Icongroupwrapper>
-                <a href="https://google.com">
+                <a href="http://weixin.qq.com/r/RxKWjgPE7F6TrUft90dV">
                   <Wechaticonimage src={Wechaticon}></Wechaticonimage>
                 </a>
                 <a href="https://www.linkedin.com/company/jll-hong-kong/">
