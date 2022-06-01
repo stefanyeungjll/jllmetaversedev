@@ -46,9 +46,9 @@ a:hover {
 }
 
 a:link:visited {
-  text-decoration: black;
+  text-decoration: none;
 }
 
 a:link {
-  color: rgb(20, 20, 20);
+  color: rgb(0, 0, 0);
 }

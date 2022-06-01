@@ -73,6 +73,13 @@ const Title = styled.p`
 const LinkWrapper = styled.a`
   text-decoration: none;
   font-weight: bold;
+  &:hover {
+    color: white;
+  }
+  &:focus {
+    color: white;
+  }
+  color: black;
 `;
 
 const PageWrapper = styled.div`
