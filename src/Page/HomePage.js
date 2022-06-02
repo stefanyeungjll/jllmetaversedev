@@ -32,6 +32,8 @@ const WhiteTextTypography = styled.p`
 const HoverButton = styled.button`
   position: relative;
   margin-top: 20px;
+  width: 100%;
+  max-width: 632px;
   font-family: Arial;
   background-color: #FFFFFF;
   align-content: center;
@@ -39,16 +41,15 @@ const HoverButton = styled.button`
   height: 50px;
   border: 2px solid #FFFFFF;
   border-radius: 15px;
-  @media screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 768px) 
-  and (-webkit-min-device-pixel-ratio: 1) { 
-    font-size: 10px;
-    width: 335px;
-  }
   &:hover {
     background: Transparent no-repeat;
     color: #FFFFFF;
+  }
+  @media screen 
+  and (max-device-width: 414px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    font-size: 10px;
+    width: 100%
   }
 `;
 
@@ -95,8 +96,15 @@ const BodyWrapper = styled.div`
   margin: auto;
   @media screen 
   and (min-device-width: 375px) 
-  and (max-device-width: 768px) 
+  and (max-device-width: 414px) 
   and (-webkit-min-device-pixel-ratio: 1) { 
+    width: 85%;
+  }
+  @media screen 
+  and (min-device-width: 415px) 
+  and (max-device-width: 1264px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+
   }
 `;
 
@@ -146,28 +154,20 @@ const Icongroupwrapper = styled.div`
   right: 0;
   @media screen 
   and (min-device-width: 376px) 
-  and (max-device-width: 413px) 
+  and (max-device-width: 414px) 
   and (-webkit-min-device-pixel-ratio: 1) { 
     margin-right: 11px;
   }
-  @media screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 500px) 
-  and (-webkit-min-device-pixel-ratio: 1) { 
-    margin-right: 20px;
-  }
+
 `;
 
 const ButtongroupWrapper = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center
   height: 500px;
   width: 100%;
-  and (min-device-width: 375px) 
-  and (max-device-width: 768px) 
-  and (-webkit-min-device-pixel-ratio: 1) { 
-    width: 337.5px;
-    height: 800px;
-  }
 `;
 export default function HomeLanding(){
     const [iscameraOpen, setIscameraOpen] = useState(false);
@@ -176,21 +176,20 @@ export default function HomeLanding(){
       <PageWrapper>
         <JLLLogo src={Logo}></JLLLogo>
         {/* <SearchAppBar></SearchAppBar> */}
-        <BodyWrapper>
+        <BodyWrapper id="BodyWrapper">
           <Title>GIS Consultancy</Title>
             <WhiteTextTypography variant="body2">
               {bodytext}
             </WhiteTextTypography>
-            <ButtongroupWrapper>
-              
+            <ButtongroupWrapper id="buttongroupwrapper">
               <LinkWrapper href="https://venuschanhk.github.io/jllmapar.github.io/polygon.html">
-                <HoverButton onClick={() => setIscameraOpen((prev) => !prev)} title="The Map">The Map
+                <HoverButton id= "button to ARmap" onClick={() => setIscameraOpen((prev) => !prev)} title="The Map">The Map
                 </HoverButton>
               </LinkWrapper>
               
               
               <LinkWrapper href="https://www.jll.com.hk/">
-                <HoverButton onClick={console.log('hello clicked second button')}>
+                <HoverButton id= "button to JLL site" onClick={console.log('hello clicked second button')}>
                   JLL Official Website
                 </HoverButton>
               </LinkWrapper>
@@ -198,7 +197,7 @@ export default function HomeLanding(){
 
              
               <LinkWrapper href="https://www.jll.com.hk/">
-                <HoverButton onClick={console.log('hello clicked second button')}>
+                <HoverButton id= "button to GIS page" onClick={console.log('hello clicked second button')}>
                   GIS Consultancy Service
                 </HoverButton> 
               </LinkWrapper>
@@ -209,15 +208,15 @@ export default function HomeLanding(){
                 </HoverButton>
               </LinkWrapper>
               {/* {iscameraOpen && <Camera></Camera>} */}
-              <Icongroupwrapper>
+            </ButtongroupWrapper>
+            <Icongroupwrapper>
                 <a href="http://weixin.qq.com/r/RxKWjgPE7F6TrUft90dV">
                   <Wechaticonimage src={Wechaticon}></Wechaticonimage>
                 </a>
                 <a href="https://www.linkedin.com/company/jll-hong-kong/">
                  <Linkediniconimage src = {Linkedinicon}></Linkediniconimage>
                 </a>
-              </Icongroupwrapper>
-            </ButtongroupWrapper>
+            </Icongroupwrapper>
         </BodyWrapper>
       </PageWrapper>
     );

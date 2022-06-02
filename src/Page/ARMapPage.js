@@ -25,7 +25,7 @@ export default class ARmaplanding extends Component {
           <Orientation orientation='landscape' alwaysRender={false}>
             <CameraWrapper>
               <WhiteTextTypography>Only visible in landscape</WhiteTextTypography>
-              <iframe src="https://venuschanhk.github.io/jllmapar.github.io/polygon.html"></iframe>
+              <iframe title= "ARMappage" src="https://venuschanhk.github.io/jllmapar.github.io/polygon.html"></iframe>
             </CameraWrapper>
           </Orientation>
           <Orientation orientation='portrait' alwaysRender={false}>
