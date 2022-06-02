@@ -4,6 +4,7 @@ import React from "react";
 import EsriMap from "./Page/MapPage";
 
 import HomeLanding from "./Page/HomePage";
+import ARmaplanding from "./Page/ARMapPage";
 import {
   First,
 } from './assets/Images';
@@ -38,6 +39,7 @@ export default function App() {
       <Router>
           <Routes>
                   <Route exact path='/' element={< HomeLanding />}></Route>
+                  <Route exact path='/armap' element={< ARmaplanding />}></Route>
                   <Route exact path='/map' element= {<EsriMap id="e691172598f04ea8881cd2a4adaa45ba" />}></Route>
           </Routes>
       </Router>
