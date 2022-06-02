@@ -27,7 +27,8 @@ const WhiteTextTypography = styled.p`
   and (-webkit-min-device-pixel-ratio: 1) { 
     font-size: 52px;
   }
-`
+`;
+
 const HoverButton = styled.button`
   position: relative;
   margin-top: 20px;
