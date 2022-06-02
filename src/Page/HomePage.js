@@ -81,7 +81,6 @@ const PageWrapper = styled.div`
   position: relative;
   width: 100%;
   max-width: 1264px;
-  overflow: hidden;
   height: 100vh;
   margin: auto;
   background: rgba(0,0,0,.5);
@@ -91,7 +90,7 @@ const BodyWrapper = styled.div`
   position: relative;
   width: 90%;
   max-width: 1264px;
-  overflow: hidden;
+  overflow: scroll;
   height: 100vh;
   margin: auto;
   @media screen 
