@@ -9,7 +9,6 @@ import {
   First,
 } from './assets/Images';
 
-
 import {
   BrowserRouter as Router,
   Routes,
@@ -31,18 +30,16 @@ const AppWrapper = styled.div`
   opacity: 1;
 `;
 
-// <ReactiveQR onCode={(code) => console.log(code)} /> //
 export default function App() {
   return(
-    
-    <AppWrapper className="App">
-      <Router>
-          <Routes>
-                  <Route exact path='/' element={< HomeLanding />}></Route>
-                  <Route exact path='/armap' element={< ARmaplanding />}></Route>
-                  <Route exact path='/map' element= {<EsriMap id="e691172598f04ea8881cd2a4adaa45ba" />}></Route>
-          </Routes>
-      </Router>
-    </AppWrapper>
+      <AppWrapper className="App" id='Appwrapper'>
+            <Router>
+                <Routes>
+                        <Route exact path='/' element={< HomeLanding />}></Route>
+                        <Route exact path='/armap' element={< ARmaplanding />}></Route>
+                        <Route exact path='/map' element= {<EsriMap id="e691172598f04ea8881cd2a4adaa45ba" />}></Route>
+                </Routes>
+            </Router>
+      </AppWrapper>
   )
 }
