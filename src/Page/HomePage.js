@@ -147,17 +147,15 @@ const Linkediniconimage = styled.img`
 `;
 
 const Icongroupwrapper = styled.div`
-  position: absolute;
-  margin-top: 5px;
-  margin-right: 4px;
+  position: relative;
   right: 0;
-  @media screen 
-  and (min-device-width: 376px) 
-  and (max-device-width: 414px) 
-  and (-webkit-min-device-pixel-ratio: 1) { 
-    margin-right: 11px;
-  }
+  max-width: 632px;
+  margin: 15px auto;
+`;
 
+const Icongroup = styled.div`
+  position: absolute;
+  right: 0;
 `;
 
 const ButtongroupWrapper = styled.div`
@@ -208,13 +206,15 @@ export default function HomeLanding(){
               </LinkWrapper>
               {/* {iscameraOpen && <Camera></Camera>} */}
             </ButtongroupWrapper>
-            <Icongroupwrapper>
+            <Icongroupwrapper id="icongroup">
+              <Icongroup>
                 <a href="http://weixin.qq.com/r/RxKWjgPE7F6TrUft90dV">
                   <Wechaticonimage src={Wechaticon}></Wechaticonimage>
                 </a>
                 <a href="https://www.linkedin.com/company/jll-hong-kong/">
                  <Linkediniconimage src = {Linkedinicon}></Linkediniconimage>
                 </a>
+              </Icongroup>
             </Icongroupwrapper>
         </BodyWrapper>
       </PageWrapper>
