@@ -10,7 +10,7 @@ RUN npm install --production --legacy-peer-deps
 # Copy app files
 COPY . .
 # Build the app
-RUN npm build
+RUN npm run-script build
 
 # stage -2 
 # Bundle static assets with nginx
